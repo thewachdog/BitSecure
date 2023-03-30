@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Streamit - Responsive Bootstrap 4 Template</title>
+   <title>BitSecure | Sign Up</title>
    {% load static %}
    <!-- Favicon -->
    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
@@ -32,36 +32,37 @@
             <div class="sign-user_card ">                    
                <div class="sign-in-page-data">
                   <div class="sign-in-from w-100 m-auto">
-                     <form class="" action="index.html">
+                     <form class="" action="login.html" method="post">
+                        {% csrf_token %}
                         <div class="row">
                            <div class="col-md-6">
                               <div class="form-group">
                                  <label>Username</label>
-                                 <input type="text" class="form-control mb-0" id="exampleInputEmail2" placeholder="Enter Full Name" autocomplete="off" required>
+                                 <input type="text" name="username" class="form-control mb-0" id="exampleInputEmail2" placeholder="Enter Full Name" autocomplete="off" required>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="form-group">  
                                  <label>E-mail</label>                               
-                                 <input type="email" class="form-control mb-0" id="exampleInputEmail3" placeholder="Enter email" autocomplete="off" required>
+                                 <input type="email" name="email" class="form-control mb-0" id="exampleInputEmail3" placeholder="Enter email" autocomplete="off" required>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="form-group">
                                  <label>First Name</label>
-                                 <input type="text" class="form-control mb-0" id="exampleInputEmail2" placeholder="First Name" autocomplete="off" required>
+                                 <input type="text" name="firstname" class="form-control mb-0" id="exampleInputEmail2" placeholder="First Name" autocomplete="off" required>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="form-group">  
                                  <label>Last Name</label>                               
-                                 <input type="email" class="form-control mb-0" id="exampleInputEmail3" placeholder="Last Name" autocomplete="off" required>
+                                 <input type="text" name="lastname" class="form-control mb-0" id="exampleInputEmail3" placeholder="Last Name" autocomplete="off" required>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="form-group">   
                                  <label>Password</label>                              
-                                 <input type="password" class="form-control mb-0" id="exampleInputPassword2" placeholder="Password" required>
+                                 <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword2" placeholder="Password" required>
                               </div>
                            </div>
                            <div class="col-md-6">
@@ -73,17 +74,17 @@
                            
                         </div>
                         <div class="custom-control custom-radio mt-2">
-                           <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                           <label class="custom-control-label" for="customRadio1">Premium-$39 / 3 Months
+                           <input type="radio" id="customRadio1" name="plan" class="custom-control-input" value="premium">
+                           <label class="custom-control-label" for="customRadio1">Premium - $39 / 3 Months
                               with a 5 day free trial</label>
                          </div>
                          <div class="custom-control custom-radio mt-2">
-                           <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                           <label class="custom-control-label" for="customRadio2"> Basic- $19 / 1 Month</label>
+                           <input type="radio" id="customRadio2" name="plan" class="custom-control-input" value="basic">
+                           <label class="custom-control-label" for="customRadio2"> Basic - $19 / 1 Month</label>
                          </div>
                          <div class="custom-control custom-radio mt-2">
-                           <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                           <label class="custom-control-label" for="customRadio3">Free-Free</label>
+                           <input type="radio" id="customRadio3" name="plan" class="custom-control-input" value="free">
+                           <label class="custom-control-label" for="customRadio3">Free</label>
                          </div>
                       
                         <button type="submit" class="btn btn-hover my-2">Sign Up</button>

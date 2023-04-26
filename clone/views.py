@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import User
 
 # Create your views here.
 
 def index(request):
     if request.POST:
-        print(request.POST)
+        # try:
+        e = request.POST['email']
+        u = get_object_or_404(User, email = e)
+        print(u.password) 
+        # except (KeyError, User.DoesNotExist) :
+        #     return render(request, "login.html", {
+        #         'error_message': "Invalid username !!!"
+        #         }
+        #     ) 
         return render(request, "index.html", {})
     else:
         return render(request, "index.html", {})
